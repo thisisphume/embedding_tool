@@ -7,7 +7,8 @@ index = {"logger": "00_dimensionReducer.ipynb",
          "fitting_PCA": "00_dimensionReducer.ipynb",
          "fitting_1layer_encoder": "00_dimensionReducer.ipynb",
          "fitting_2layer_encoder": "00_dimensionReducer.ipynb",
-         "calculate_rmse": "00_dimensionReducer.ipynb"}
+         "calculate_rmse": "00_dimensionReducer.ipynb",
+         "plot_output": "00_dimensionReducer.ipynb"}
 
 modules = ["core.py"]
 
