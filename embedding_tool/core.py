@@ -150,7 +150,7 @@ def fitting_1layer_encoder(X, reduce_dim, learning_rate):
 def fitting_2layer_encoder(X, reduce_dim, learning_rate):
 
     in_out_dimension = X.shape[1]
-    half_dimension = (in_out_dimension - reduce_dim) / 2
+    half_dimension = int((in_out_dimension - reduce_dim) / 2)
 
     # Model Construction
     input_layer = Input(shape=(in_out_dimension,))

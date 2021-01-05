@@ -12,8 +12,8 @@ from embedding_tool.core import *
 
 ## How to use
 
-## Dimension Reduction: `dimensionReducer` class
-> The function performs dimensionality reduction, pre-processing the data and comparing the reconstruction error via PCA and autoencoder.
+### Dimension Reduction: `dimensionReducer` class
+The function performs dimensionality reduction, pre-processing the data and comparing the reconstruction error via PCA and autoencoder.
 
 **Input data:**
 The input matrix has a size of 863 $\times$ 768.
@@ -77,25 +77,37 @@ dim_reducer.rmse_result
 
 
 
+```python
+dim_reducer.rmse_result.T.sort_values('MSE').head(1).values[0][0]
+```
+
+
+
+
+    0.6516801665399286
+
+
+
 Here we can see that the two-layers autoencoder has the best performance with the lowest MSE of 0.64.
 
-**Observing the loss thorughout the epoch:** If we see that the MSE doesn't converge fast enough, we could adjust the learning rate parameter. The default is 0.002. Try increase it to 0.005 if it doesn't converge or decrease to 0.001 if it converges way too fast and oscillating.
+**Observing the loss for each epoch:** If we see that the MSE doesn't converge fast enough, we could adjust the learning rate parameter. The default is 0.002. Try increase it to 0.005 if it doesn't converge or decrease to 0.001 if it converges way too fast and oscillating.
 
 ```python
 dim_reducer.plot_autoencoder_performance()
 ```
 
 
-![png](docs/images/output_13_0.png)
+![png](docs/images/output_14_0.png)
 
 
 
-![png](docs/images/output_13_1.png)
+![png](docs/images/output_14_1.png)
 
 
-**Reduced Dimension Output:** There are three outputs from three different methods, which are PCA, 1-layer AE, and 2-layers AE.
+**Result (Reduced Dimension Output):** There are three outputs from three different methods, which are PCA, 1-layer AE, and 2-layers AE.
 
 ```python
+### Embedding from PCA
 dim_reducer.dfLowDimPCA.head()
 ```
 
@@ -157,6 +169,7 @@ dim_reducer.dfLowDimPCA.head()
 
 
 ```python
+### Embedding from 1-layer autoencoder
 dim_reducer.dfLowDim1AE.head()
 ```
 
@@ -218,6 +231,7 @@ dim_reducer.dfLowDim1AE.head()
 
 
 ```python
+### Embedding from 2-layers autoencoder
 dim_reducer.dfLowDim2AE.head()
 ```
 
@@ -278,22 +292,24 @@ dim_reducer.dfLowDim2AE.head()
 
 
 
-**Plotting the embedding (for 2-dimensional embedding)**
+**Plotting the embedding**
 
 ```python
+### Embedding from 2-layers autoencoder
 plot_output(dim_reducer.dfLowDim2AE)
 ```
 
 
-![png](docs/images/output_19_0.png)
+![png](docs/images/output_20_0.png)
 
 
 ```python
+### Embedding from 1-layer autoencoder
 plot_output(dim_reducer.dfLowDim1AE)
 ```
 
 
-![png](docs/images/output_20_0.png)
+![png](docs/images/output_21_0.png)
 
 
 ***

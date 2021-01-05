@@ -67,8 +67,7 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Dimension-Reduction:-dimensionReducer-class">Dimension Reduction: <a href="/embedding_tool/dimensionReducer.html#dimensionReducer"><code>dimensionReducer</code></a> class<a class="anchor-link" href="#Dimension-Reduction:-dimensionReducer-class"> </a></h2><blockquote><p>The function performs dimensionality reduction, pre-processing the data and comparing the reconstruction error via PCA and autoencoder.</p>
-</blockquote>
+<h3 id="Dimension-Reduction:-dimensionReducer-class">Dimension Reduction: <a href="/embedding_tool/dimensionReducer.html#dimensionReducer"><code>dimensionReducer</code></a> class<a class="anchor-link" href="#Dimension-Reduction:-dimensionReducer-class"> </a></h3><p>The function performs dimensionality reduction, pre-processing the data and comparing the reconstruction error via PCA and autoencoder.</p>
 
 </div>
 </div>
@@ -208,6 +207,39 @@ The input matrix has a size of 863 $\times$ 768.</p>
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dim_reducer</span><span class="o">.</span><span class="n">rmse_result</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;MSE&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.6516801665399286</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here we can see that the two-layers autoencoder has the best performance with the lowest MSE of 0.64.</p>
@@ -217,7 +249,7 @@ The input matrix has a size of 863 $\times$ 768.</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Observing the loss thorughout the epoch:</strong> If we see that the MSE doesn't converge fast enough, we could adjust the learning rate parameter. The default is 0.002. Try increase it to 0.005 if it doesn't converge or decrease to 0.001 if it converges way too fast and oscillating.</p>
+<p><strong>Observing the loss for each epoch:</strong> If we see that the MSE doesn't converge fast enough, we could adjust the learning rate parameter. The default is 0.002. Try increase it to 0.005 if it doesn't converge or decrease to 0.001 if it converges way too fast and oscillating.</p>
 
 </div>
 </div>
@@ -271,7 +303,7 @@ The input matrix has a size of 863 $\times$ 768.</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Reduced Dimension Output:</strong> There are three outputs from three different methods, which are PCA, 1-layer AE, and 2-layers AE.</p>
+<p><strong>Result (Reduced Dimension Output):</strong> There are three outputs from three different methods, which are PCA, 1-layer AE, and 2-layers AE.</p>
 
 </div>
 </div>
@@ -524,7 +556,7 @@ The input matrix has a size of 863 $\times$ 768.</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Plotting the embedding (for 2-dimensional embedding)</strong></p>
+<p><strong>Plotting the embedding</strong></p>
 
 </div>
 </div>
